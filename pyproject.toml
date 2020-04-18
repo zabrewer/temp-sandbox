@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "MerakiToolkit"
+version = "0.1.0"
+description = "CLI Framework for Cisco Meraki scripts and tools used to Interact With the Dashboard API"
+authors = ["zabrewer <zbrewer@cisco.com>"]
+readme = "README.md"
+homepage = ""
+repository = "https://github.com/zabrewer/MerakiToolkit"
+documentation = "https://github.com/zabrewer/MerakiToolkit"
+keywords = ["Meraki",
+            "Cisco Meraki",
+            "Meraki API",
+            "Meraki Dashboard",
+            "Cisco"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+meraki = "^0.100.1"
+click = "^7.1.1"
+configparser = "^5.0.0"
+colorama = "^0.4.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^4.6"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+# change this when this feature is enabled:  https://github.com/python-poetry/poetry/issues/2310
+[tool.poetry.scripts]
+mtk = "merakitoolkit.mtk:entry_point"
+orgs = "merakitoolkit.orgs:entry_point"
+
+#[tool.poetry.plugins] # Optional super table
+#[tool.poetry.plugins."mtk"]
+#"mtk" = "merakitoolkit.mtk:entry_point"
+
+#packages = [
+#    { include = "merakitoolkit" },
+#    { include = "admin/**/*.py" },
+#]
+#    RuntimeError: The Poetry configuration is invalid:
+#      - [plugins.blogtool.parsers.packages] [{'include': 'merakitoolkit'}, {'include': 'admin/**/*.py'}] is not of type 'string'
+
